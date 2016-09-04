@@ -1,9 +1,7 @@
 
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, Image } from 'react-native';
-import { connect } from 'react-redux';
 import HTMLView from 'react-native-htmlview';
-// import stringUtil from 'string';
 import _ from 'lodash';
 import moment from 'moment';
 
@@ -130,18 +128,4 @@ const styles = StyleSheet.create({
   },
 });
 
-// function select(store, props) {
-//   console.log(store);
-//   // console.log(props);
-//   return {
-//     showTick: !!store.schedule[props.session.id],
-//   };
-// }
-function select(store, props) {
-  // console.log(store);
-  // console.log(props.news.id);
-  return {};
-}
-
-// export default connect(select)(NewsCell);
-export default connect(select)(NewsCell);
+export default NewsCell;

@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-import {Actions} from "react-native-router-flux";
+import { NavigationActions } from '../navigation/NavigationState';
 
 import NewsCell from './NewsCell';
-// var SessionsSectionHeader = require('./SessionsSectionHeader');
 import PureListView from '../../components/PureListView';
 
 class NewsList extends Component {
   constructor(props) {
     super(props);
-
     this._innerRef = null;
 
-    // this.renderSectionHeader = this.renderSectionHeader.bind(this);
     this.renderRow = this.renderRow.bind(this);
     this.renderEmptyList = this.renderEmptyList.bind(this);
     this.storeInnerRef = this.storeInnerRef.bind(this);
@@ -23,21 +20,16 @@ class NewsList extends Component {
         ref={this.storeInnerRef}
         data={this.props.data}
         renderRow={this.renderRow}
-        // renderSectionHeader={this.renderSectionHeader}
         {...this.props}
         renderEmptyList={this.renderEmptyList}
       />
     );
   }
 
-  // renderSectionHeader(sectionData: any, sectionID: string) {
-  //   return <SessionsSectionHeader title={sectionID} />;
-  // }
-
   renderRow(news) {
     return (
       <NewsCell
-        onPress={Actions.newsView}
+        onPress={NavigationActions.newsView}
         news={news}
       />
     );

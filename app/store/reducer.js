@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import navigationStateReducer from '../modules/navigation/NavigationState'
-import configStateReducer from '../modules/config/ConfigState';
+import navigationState from '../modules/navigation/NavigationState'
+import configState from '../modules/config/ConfigState';
 
 const rootReducer = combineReducers({
-  navigationStateReducer,
-  configStateReducer,
+  navigationState,
+  configState,
 });
 
 export default rootReducer;

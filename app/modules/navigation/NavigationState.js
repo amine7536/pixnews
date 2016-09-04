@@ -1,8 +1,15 @@
-import { ActionConst } from 'react-native-router-flux';
+import { Map } from 'immutable';
+import { ActionConst, Actions } from 'react-native-router-flux';
 
-const initialState = {
+const initialState = Map({
   scene: {},
-};
+});
+
+/**
+Keep RNRF Actions in a more relavant variable name.
+Actions var name is to general to my taste
+*/
+export const  NavigationActions = Actions;
 
 export default function navigationReducer(state = initialState, action = {}) {
   switch (action.type) {

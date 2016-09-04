@@ -1,27 +1,23 @@
+import { Map } from 'immutable';
+
+const initialState = Map({
+  version: '0.1.0' // ToDo: Should Be Loaded from package.json
+});
 
 // Actions
 const LOADED_CONFIG = 'AppState/LOADED_CONFIG';
 
-const initialState: Config = {
-  wifiNetwork: '',
-  wifiPassword: '',
-  appLinkURL: 'https://www.fbf8.com/',
-  appInvitePreviewImageURL: '',
-  sessionURLTemplate: 'https://www.fbf8.com/schedule/session/{slug}',
-};
+// Action creators
+export function loadConfig() {
+  return {type: LOADED_CONFIG};
+}
 
-export default function configState(state: Config = initialState, action: Action): Config {
-  if (action.type === 'LOADED_CONFIG') {
-    return {
-      wifiNetwork: action.config.get('wifiNetwork') || state.wifiNetwork,
-      wifiPassword: action.config.get('wifiPassword') || state.wifiPassword,
-      appLinkURL: action.config.get('appLinkURL') || state.appLinkURL,
-      appInvitePreviewImageURL: action.config.get('appInvitePreviewImageURL') ||
-        state.appInvitePreviewImageURL,
-      sessionURLTemplate: action.config.get('sessionURLTemplate') ||
-        state.sessionURLTemplate,
-    };
+export default function configState(state = initialState, action = {}) {
+  switch (action.type) {
+    case LOADED_CONFIG:
+      return initialState;
+
+    default:
+      return state;
   }
-
-  return state;
 }

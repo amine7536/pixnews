@@ -2,14 +2,6 @@
 // Actions
 const LOADED_CONFIG = 'AppState/LOADED_CONFIG';
 
-export type Config = {
-  wifiNetwork: string;
-  wifiPassword: string;
-  appLinkURL: string;
-  appInvitePreviewImageURL: string;
-  sessionURLTemplate: string;
-};
-
 const initialState: Config = {
   wifiNetwork: '',
   wifiPassword: '',
@@ -18,7 +10,7 @@ const initialState: Config = {
   sessionURLTemplate: 'https://www.fbf8.com/schedule/session/{slug}',
 };
 
-function config(state: Config = initialState, action: Action): Config {
+export default function configState(state: Config = initialState, action: Action): Config {
   if (action.type === 'LOADED_CONFIG') {
     return {
       wifiNetwork: action.config.get('wifiNetwork') || state.wifiNetwork,
@@ -33,5 +25,3 @@ function config(state: Config = initialState, action: Action): Config {
 
   return state;
 }
-
-module.exports = config;

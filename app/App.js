@@ -6,6 +6,7 @@ import { Scene } from 'react-native-router-flux';
 
 import NavigationRouterRedux from './modules/navigation/NavigationRouterContainer'
 import NewsScreen from './modules/news/NewsScreen';
+import NewsDetailScreen from './modules/news/NewsDetailScreen';
 
 
 class App extends Component {
@@ -30,8 +31,8 @@ class App extends Component {
     return (
       <NavigationRouterRedux>
         <Scene key="root" hideNavBar hideTabBar>
-          <Scene key="home" component={NewsScreen} initial />
-          <Scene key="newsView" direction="vertical" component={NewsScreen} />
+          <Scene key="NewsScreen" component={NewsScreen} initial />
+          <Scene key="NewsDetailScreen" component={NewsDetailScreen} />
         </Scene>
       </NavigationRouterRedux>
     );

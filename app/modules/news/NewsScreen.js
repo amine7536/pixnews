@@ -1,5 +1,4 @@
 import React from 'react';
-import {Actions} from "react-native-router-flux";
 
 import StatusBarBackground from '../../components/StatusBarBackground';
 import ViewContainer from '../../components/ViewContainer';

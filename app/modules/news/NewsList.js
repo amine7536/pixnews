@@ -29,7 +29,7 @@ class NewsList extends Component {
   renderRow(news) {
     return (
       <NewsCell
-        onPress={NavigationActions.newsView}
+        onPress={NavigationActions.NewsDetailScreen}
         news={news}
       />
     );

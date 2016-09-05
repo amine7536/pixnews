@@ -1,4 +1,5 @@
 import React from 'react';
+import { ScrollView } from 'react-native';
 
 import StatusBarBackground from '../../components/StatusBarBackground';
 import PixViewContainer from '../../components/PixViewContainer';
@@ -13,11 +14,13 @@ const NewsDetailScreen = (props) => {
   return (
     <PixViewContainer>
       <StatusBarBackground style={{ backgroundColor: 'white' }} />
-      <PixListCell>
-        <AuthorCell news={news} />
-        <PixSpacer />
-        <NewsCell news={news} />
-      </PixListCell>
+      <ScrollView>
+        <PixListCell>
+          <AuthorCell news={news} />
+          <PixSpacer />
+          <NewsCell news={news} />
+        </PixListCell>
+      </ScrollView>
     </PixViewContainer>
   );
 };

@@ -11,7 +11,12 @@ class NewsCell extends Component {
     const { news } = this.props;
     const { image, title, html } = news;
 
-    const excerpt = _.truncate(html, { length: 100 });
+    let excerpt;
+    if (this.props.truncate) {
+      excerpt = _.truncate(html, { length: this.props.truncate });
+    } else {
+      excerpt = html;
+    }
 
     let cell = (
       <View>

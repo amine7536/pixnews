@@ -1,3 +1,8 @@
+/**
+ * Taken from F8App Sample https://github.com/fbsamples/f8app
+ */
+ /*eslint-disable */
+
 import React, { Component } from 'react';
 import { ListView, Dimensions, Platform, StyleSheet, View } from 'react-native';
 

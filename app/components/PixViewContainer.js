@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 
 
-const ViewContainer = (props) => {
+const PixViewContainer = (props) => {
   return (
     <View style={[styles.viewContainer, props.style || {}]}>
       {props.children}
@@ -22,4 +22,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ViewContainer;
+export default PixViewContainer;

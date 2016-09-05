@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import { NavigationActions } from '../navigation/NavigationState';
 
 import NewsCell from './NewsCell';
+import AuthorCell from './AuthorCell';
+
 import PureListView from '../../components/PureListView';
+import PixListCell from '../../components/PixListCell';
+import PixSpacer from '../../components/PixSpacer';
 
 class NewsList extends Component {
   constructor(props) {
@@ -11,7 +15,6 @@ class NewsList extends Component {
 
     this.renderRow = this.renderRow.bind(this);
     this.renderEmptyList = this.renderEmptyList.bind(this);
-    this.storeInnerRef = this.storeInnerRef.bind(this);
   }
 
   render() {
@@ -28,29 +31,23 @@ class NewsList extends Component {
 
   renderRow(news) {
     return (
-      <NewsCell
-        onPress={NavigationActions.newsView}
-        news={news}
-      />
+      <PixListCell>
+        <AuthorCell
+          onPress={NavigationActions.AuthorDetailScreen}
+          news={news}
+        />
+        <PixSpacer />
+        <NewsCell
+          onPress={() => NavigationActions.NewsDetailScreen({news})}
+          news={news}
+        />
+      </PixListCell>
     );
   }
 
   renderEmptyList() {
     const { renderEmptyList } = this.props;
     return renderEmptyList && renderEmptyList(this.props.day);
-  }
-
-
-  storeInnerRef(ref) {
-    this._innerRef = ref;
-  }
-
-  scrollTo(...args) {
-    this._innerRef && this._innerRef.scrollTo(...args);
-  }
-
-  getScrollResponder() {
-    return this._innerRef && this._innerRef.getScrollResponder();
   }
 }
 

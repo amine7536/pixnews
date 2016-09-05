@@ -2,19 +2,16 @@ import React from 'react';
 import { Text } from 'react-native';
 
 import StatusBarBackground from '../../components/StatusBarBackground';
-import ViewContainer from '../../components/ViewContainer';
+import PixViewContainer from '../../components/PixViewContainer';
 
-const yourNews = require('../../ghost-api.json');
-
-const NewsDetailScreen = (props) => {
-  const { navigator } = props;
+const NewsDetailScreen = () => {
   return (
-    <ViewContainer>
+    <PixViewContainer>
       <StatusBarBackground style={{ backgroundColor: 'white' }} />
       <Text>
         Place Holder
       </Text>
-    </ViewContainer>
+    </PixViewContainer>
   );
 };
 

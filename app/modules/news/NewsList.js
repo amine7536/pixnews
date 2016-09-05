@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
 import { NavigationActions } from '../navigation/NavigationState';
 
 import NewsCell from './NewsCell';
@@ -15,7 +14,6 @@ class NewsList extends Component {
 
     this.renderRow = this.renderRow.bind(this);
     this.renderEmptyList = this.renderEmptyList.bind(this);
-    this.storeInnerRef = this.storeInnerRef.bind(this);
   }
 
   render() {
@@ -48,19 +46,6 @@ class NewsList extends Component {
   renderEmptyList() {
     const { renderEmptyList } = this.props;
     return renderEmptyList && renderEmptyList(this.props.day);
-  }
-
-
-  storeInnerRef(ref) {
-    this._innerRef = ref;
-  }
-
-  scrollTo(...args) {
-    this._innerRef && this._innerRef.scrollTo(...args);
-  }
-
-  getScrollResponder() {
-    return this._innerRef && this._innerRef.getScrollResponder();
   }
 }
 

@@ -1,16 +1,15 @@
 import React from 'react';
 
 import StatusBarBackground from '../../components/StatusBarBackground';
-import ViewContainer from '../../components/ViewContainer';
+import PixViewContainer from '../../components/PixViewContainer';
 import Categories from './Categories';
 import NewsList from './NewsList';
 
 const yourNews = require('../../ghost-api.json');
 
-const NewsScreen = (props) => {
-  const { navigator } = props;
+const NewsScreen = () => {
   return (
-    <ViewContainer>
+    <PixViewContainer>
       <StatusBarBackground style={{ backgroundColor: 'white' }} />
       <Categories>
         <NewsList tabLabel="For you" data={yourNews.posts} />
@@ -22,7 +21,7 @@ const NewsScreen = (props) => {
         <NewsList tabLabel="Technology" data={yourNews.posts} />
         <NewsList tabLabel="Top Stories" data={yourNews.posts} />
       </Categories>
-    </ViewContainer>
+    </PixViewContainer>
   );
 };
 

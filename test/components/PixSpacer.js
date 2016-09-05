@@ -1,7 +1,7 @@
 import React, { View, Text, StyleSheet } from 'react-native';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
-import PixSpacer from '../app/components/PixSpacer';
+import PixSpacer from '../../app/components/PixSpacer';
 
 describe('<PixSpacer />', () => {
   it('should render : View', () => {

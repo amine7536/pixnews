@@ -1,7 +1,7 @@
 import React, { TouchableHighlight } from 'react-native';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
-import PixTouchable from '../app/components/PixTouchable';
+import PixTouchable from '../../app/components/PixTouchable';
 
 describe('<PixTouchable />', () => {
   it('should render : TouchableHighlight', () => {

@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import { View } from 'react-native';
 import { NavigationActions } from '../navigation/NavigationState';
 
 import NewsCell from './NewsCell';
+import AuthorCell from './AuthorCell';
+
 import PureListView from '../../components/PureListView';
+import PixListCell from '../../components/PixListCell';
 
 class NewsList extends Component {
   constructor(props) {
@@ -28,10 +32,16 @@ class NewsList extends Component {
 
   renderRow(news) {
     return (
-      <NewsCell
-        onPress={NavigationActions.NewsDetailScreen}
-        news={news}
-      />
+      <PixListCell>
+        <AuthorCell
+          onPress={NavigationActions.AuthorDetailScreen}
+          news={news}
+        />
+        <NewsCell
+          onPress={NavigationActions.NewsDetailScreen}
+          news={news}
+        />
+      </PixListCell>
     );
   }
 

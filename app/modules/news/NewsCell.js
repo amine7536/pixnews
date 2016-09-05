@@ -19,6 +19,17 @@ class NewsCell extends Component {
 
     let cell = (
       <View style={[styles.cell, this.props.style]}>
+        <View style={styles.authorSection}>
+          <Image source={require('./img/me.png')} style={styles.authorImage} />
+          <View style={styles.authorName}>
+            <Text numberOfLines={1} style={styles.authorText}>
+              {author}
+            </Text>
+            <Text numberOfLines={1} style={styles.dateText}>
+              {publishedAt} - {readTime} min read
+            </Text>
+          </View>
+        </View>
         <View style={styles.titleSection}>
           <Text numberOfLines={2} style={styles.newsTitle}>
             {title}

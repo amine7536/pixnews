@@ -15,17 +15,15 @@ class AuthorCell extends Component {
     const readTime = _.round(_.words(html).length / 130) + 1;
 
     let cell = (
-      <View>
-        <View style={styles.authorSection}>
-          <Image source={require('./img/me.png')} style={styles.authorImage} />
-          <View style={styles.authorName}>
-            <Text numberOfLines={1} style={styles.authorText}>
-              {author}
-            </Text>
-            <Text numberOfLines={1} style={styles.dateText}>
-              {publishedAt} - {readTime} min read
-            </Text>
-          </View>
+      <View style={styles.authorSection}>
+        <Image source={require('./img/me.png')} style={styles.authorImage} />
+        <View style={styles.authorName}>
+          <Text numberOfLines={1} style={styles.authorText}>
+            {author}
+          </Text>
+          <Text numberOfLines={1} style={styles.dateText}>
+            {publishedAt} - {readTime} min read
+          </Text>
         </View>
       </View>
     );
@@ -43,13 +41,6 @@ class AuthorCell extends Component {
 }
 
 const styles = StyleSheet.create({
-  cell: {
-    paddingVertical: 15,
-    paddingLeft: 15,
-    paddingRight: 15,
-    backgroundColor: 'white',
-    justifyContent: 'center',
-  },
   authorImage: {
     height: 30,
     width: 30,
@@ -62,7 +53,7 @@ const styles = StyleSheet.create({
   authorSection: {
     flexDirection: 'row',
     alignItems: 'flex-start',
-    marginBottom: 20
+    // marginBottom: 20
   },
   authorText: {
     flex: 1,
@@ -71,6 +62,7 @@ const styles = StyleSheet.create({
     color: '#00ab6b',
     marginRight: 10,
     marginLeft: 10,
+    marginBottom: 4,
   },
   dateText: {
     flex: 1,
@@ -80,35 +72,6 @@ const styles = StyleSheet.create({
     marginBottom: 4,
     marginRight: 10,
     marginLeft: 10,
-  },
-  titleSection: {
-    flexDirection: 'row',
-    // marginBottom: 10,
-  },
-  newsTitle: {
-    flex: 1,
-    fontSize: 24,
-    fontWeight: 'bold',
-    fontFamily: 'HelveticaNeue-bold',
-    lineHeight: 24,
-    color: '#000000',
-    marginBottom: 4,
-    marginRight: 10,
-  },
-  newsImage: {
-    height: 210,
-    width: 345,
-    marginBottom: 15,
-  },
-  newsText: {
-    flex: 1,
-    fontSize: 16,
-    fontWeight: 'normal',
-    fontFamily: 'HelveticaNeue-bold',
-    lineHeight: 24,
-    color: '#000000',
-    marginBottom: 4,
-    marginRight: 10,
   },
 });
 

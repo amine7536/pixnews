@@ -6,6 +6,7 @@ import AuthorCell from './AuthorCell';
 
 import PureListView from '../../components/PureListView';
 import PixListCell from '../../components/PixListCell';
+import PixSpacer from '../../components/PixSpacer';
 
 class NewsList extends Component {
   constructor(props) {
@@ -35,6 +36,7 @@ class NewsList extends Component {
           onPress={NavigationActions.AuthorDetailScreen}
           news={news}
         />
+        <PixSpacer />
         <NewsCell
           onPress={NavigationActions.NewsDetailScreen}
           news={news}

@@ -4,7 +4,7 @@ import { expect } from 'chai';
 import PixListCell from '../app/components/PixListCell';
 
 describe('<PixListCell />', () => {
-  it('should render a View', () => {
+  it('should render : View', () => {
     const wrapper = shallow(<PixListCell />);
     expect(wrapper.length).to.equal(1);
   });

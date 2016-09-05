@@ -4,8 +4,9 @@ import { expect } from 'chai';
 import PixSpacer from '../app/components/PixSpacer';
 
 describe('<PixSpacer />', () => {
-  it('should render vertical spacer', () => {
-    const wrapper = shallow(<PixSpacer />);
-    expect(wrapper.length).to.equal(1);
+  it('should render : View', () => {
+    const spacer = shallow(<PixSpacer style={{ paddingVertical: 5 }} />);
+    expect(spacer.find(View)).to.have.length(1);
+    // expect(spacer.length).to.equal(1);
   });
 });

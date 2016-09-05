@@ -1,3 +1,6 @@
+/* Taken from https://github.com/skv-headless/react-native-scrollable-tab-view/blob/master/ScrollableTabBar.js */
+/*eslint-disable */
+
 import React, { Component, PropTypes } from 'react';
 import {
   View,
@@ -14,7 +17,7 @@ import {
 const WINDOW_WIDTH = Dimensions.get('window').width;
 
 
-class ScrollableTabBar extends Component {
+class PixScrollableTabBar extends Component {
   static propTypes: {
     goToPage: PropTypes.func,
     activeTab: PropTypes.number,
@@ -229,4 +232,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ScrollableTabBar;
+export default PixScrollableTabBar;

@@ -38,7 +38,7 @@ class NewsList extends Component {
         />
         <PixSpacer />
         <NewsCell
-          onPress={NavigationActions.NewsDetailScreen}
+          onPress={() => NavigationActions.NewsDetailScreen({news})}
           news={news}
         />
       </PixListCell>

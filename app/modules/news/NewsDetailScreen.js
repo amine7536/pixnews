@@ -1,16 +1,23 @@
 import React from 'react';
-import { Text } from 'react-native';
 
 import StatusBarBackground from '../../components/StatusBarBackground';
 import PixViewContainer from '../../components/PixViewContainer';
+import PixSpacer from '../../components/PixSpacer';
+import PixListCell from '../../components/PixListCell';
 
-const NewsDetailScreen = () => {
+import AuthorCell from './AuthorCell';
+import NewsCell from './NewsCell';
+
+const NewsDetailScreen = (props) => {
+  const { news } = props;
   return (
     <PixViewContainer>
       <StatusBarBackground style={{ backgroundColor: 'white' }} />
-      <Text>
-        Place Holder
-      </Text>
+      <PixListCell>
+        <AuthorCell news={news} />
+        <PixSpacer />
+        <NewsCell news={news} />
+      </PixListCell>
     </PixViewContainer>
   );
 };

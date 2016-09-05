@@ -1,10 +1,8 @@
-import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { AppState, StyleSheet } from 'react-native';
+import React, { Component } from 'react';
+import { AppState } from 'react-native';
 import { Scene } from 'react-native-router-flux';
 
-import NavigationRouterRedux from './modules/navigation/NavigationRouterContainer'
+import NavigationRouterRedux from './modules/navigation/NavigationRouterContainer';
 import NewsScreen from './modules/news/NewsScreen';
 import NewsDetailScreen from './modules/news/NewsDetailScreen';
 

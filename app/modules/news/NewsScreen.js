@@ -13,7 +13,6 @@ const NewsScreen = () => {
       <StatusBarBackground style={{ backgroundColor: 'white' }} />
       <Categories>
         <NewsList tabLabel="For you" data={yourNews.posts} />
-        <NewsList tabLabel="Orlando" data={yourNews.posts} />
         <NewsList tabLabel="World" data={yourNews.posts} />
         <NewsList tabLabel="Arts" data={yourNews.posts} />
         <NewsList tabLabel="Life" data={yourNews.posts} />

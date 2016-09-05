@@ -9,14 +9,14 @@ import PixTouchableIOS from '../../components/PixTouchable';
 class AuthorCell extends Component {
   render() {
     const { news } = this.props;
-    const { html, author, published_at } = news;
+    const { html, author, author_image, published_at } = news;
 
     const publishedAt = moment(published_at).format('LL');
     const readTime = _.round(_.words(html).length / 130) + 1;
 
     let cell = (
       <View style={styles.authorSection}>
-        <Image source={require('./img/me.png')} style={styles.authorImage} />
+        <Image source={{ uri: author_image }} style={styles.authorImage} />
         <View style={styles.authorName}>
           <Text numberOfLines={1} style={styles.authorText}>
             {author}

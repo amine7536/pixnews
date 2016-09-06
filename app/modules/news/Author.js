@@ -4,6 +4,8 @@ import { StyleSheet, View, Text, Image } from 'react-native';
 import _ from 'lodash';
 import moment from 'moment';
 
+import AuthorAvatar from './AuthorAvatar';
+
 const Author = (props) => {
   const { html, author, author_image, published_at } = props;
   const publishedAt = moment(published_at).format('LL');
@@ -11,7 +13,7 @@ const Author = (props) => {
 
   return (
     <View style={styles.authorSection}>
-      <Image source={{ uri: author_image }} style={styles.authorImage} />
+      <AuthorAvatar author_image={author_image} />
       <View style={styles.authorName}>
         <Text numberOfLines={1} style={styles.authorText}>
           {author}

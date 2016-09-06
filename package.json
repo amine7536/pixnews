@@ -26,6 +26,7 @@
     "redux-persist": "^3.5.0",
     "redux-thunk": "^2.1.0",
     "reselect": "^2.5.3",
+    "sinon": "^1.17.5",
     "string": "^3.3.1"
   },
   "devDependencies": {

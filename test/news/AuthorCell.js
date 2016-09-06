@@ -1,7 +1,11 @@
 import React, { View, Text, Image } from 'react-native';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
+import sinon from "sinon";
+
 import Author from '../../app/modules/news/Author';
+import AuthorCell from '../../app/modules/news/AuthorCell';
+
 
 describe('<AuthorCell />', () => {
   const mockData = {
@@ -12,10 +16,33 @@ describe('<AuthorCell />', () => {
     author_image: 'http://stlpi.org/wp-content/uploads/2014/08/NYTimes-logo.jpg',
   };
 
-  it('should render : View, Image, Text', () => {
-    const wrapper = shallow(<Author news={mockData} />);
-    expect(wrapper.find(View)).to.have.length(2);
-    expect(wrapper.find(Image)).to.have.length(1);
-    expect(wrapper.find(Text)).to.have.length(2);
+  it('should render : Author', () => {
+    const wrapper = shallow(
+      <AuthorCell
+        news={mockData}
+      />
+    );
+    expect(wrapper.find(Author)).to.have.length(1);
+  });
+
+  it('should have +news+ prop', () => {
+    const wrapper = shallow(
+      <AuthorCell
+        news={mockData}
+      />
+    );
+    /* eslint no-unused-expressions: 0 */
+    expect(wrapper.props().news).to.be.defined;
+  });
+
+  it('should handle button presses', () => {
+    const onPress = sinon.spy();
+    const wrapper = shallow(
+      <AuthorCell
+        onPress={onPress}
+        news={mockData}
+      />);
+    wrapper.simulate('press');
+    expect(onPress.calledOnce).to.equal(true);
   });
 });

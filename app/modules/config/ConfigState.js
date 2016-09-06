@@ -9,7 +9,7 @@ const LOADED_CONFIG = 'AppState/LOADED_CONFIG';
 
 // Action creators
 export function loadConfig() {
-  return {type: LOADED_CONFIG};
+  return { type: LOADED_CONFIG };
 }
 
 export default function configState(state = initialState, action = {}) {

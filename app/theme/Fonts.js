@@ -50,6 +50,10 @@ const style = {
   description: {
     fontFamily: type.base,
     fontSize: size.medium
+  },
+  title: {
+    fontFamily: type.bold,
+    fontSize: size.h4
   }
 };
 

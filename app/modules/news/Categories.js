@@ -1,15 +1,17 @@
 import React from 'react';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
-import ScrollableTabBar from '../../components/PixScrollableTabBar';
+import PixScrollableTabBar from '../../components/PixScrollableTabBar';
+
+import { Colors, Fonts } from '../../theme';
 
 const Categories = (props) => {
   return (
     <ScrollableTabView
-      tabBarActiveTextColor="#000000"
-      tabBarInactiveTextColor="#9e9e9e"
-      tabBarUnderlineColor="#FFFFFF"
-      tabBarTextStyle={{ fontFamily: 'HelveticaNeue', fontSize: 13 }}
-      renderTabBar={() => <ScrollableTabBar />}
+      tabBarActiveTextColor={Colors.black}
+      tabBarInactiveTextColor={Colors.gray}
+      tabBarUnderlineColor={Colors.white}
+      tabBarTextStyle={Fonts.normal}
+      renderTabBar={() => <PixScrollableTabBar />}
     >
       {props.children}
     </ScrollableTabView>

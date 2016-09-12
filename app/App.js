@@ -1,30 +1,11 @@
-import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import React, { Component } from 'react';
+import { AppState } from 'react-native';
+import { Scene } from 'react-native-router-flux';
 
-import {
-  AppState,
-  StyleSheet,
-} from 'react-native';
-
-import {
-  Scene,
-  Reducer,
-  Router,
-  Actions,
-  ActionConst,
-} from 'react-native-router-flux';
-
+import NavigationRouterRedux from './modules/navigation/NavigationRouterContainer';
 import NewsScreen from './modules/news/NewsScreen';
-// import PixInfoView from './modules/info/PixInfoView';
+import NewsDetailScreen from './modules/news/NewsDetailScreen';
 
-const reducerCreate = (params) => {
-  const defaultReducer = new Reducer(params);
-  return (state, action) => {
-    console.log('ACTION:', action);
-    return defaultReducer(state, action);
-  };
-};
 
 class App extends Component {
   static propTypes = {
@@ -46,12 +27,12 @@ class App extends Component {
 
   render() {
     return (
-      <Router createReducer={reducerCreate}>
+      <NavigationRouterRedux>
         <Scene key="root" hideNavBar hideTabBar>
-          <Scene key="home" component={NewsScreen} initial />
-          <Scene key="newsView" direction="vertical" component={NewsScreen} />
+          <Scene key="NewsScreen" component={NewsScreen} initial />
+          <Scene key="NewsDetailScreen" component={NewsDetailScreen} />
         </Scene>
-      </Router>
+      </NavigationRouterRedux>
     );
   }
 }

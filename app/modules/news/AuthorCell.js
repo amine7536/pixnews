@@ -7,6 +7,7 @@ import moment from 'moment';
 import PixTouchableIOS from '../../components/PixTouchable';
 
 import AuthorAvatar from './AuthorAvatar';
+import { Colors } from '../../theme';
 
 class AuthorCell extends Component {
   render() {
@@ -59,7 +60,7 @@ const styles = StyleSheet.create({
     flex: 1,
     fontFamily: 'HelveticaNeue',
     fontSize: 14,
-    color: '#00ab6b',
+    color: Colors.green,
     marginRight: 10,
     marginLeft: 10,
     marginBottom: 4,
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
     flex: 1,
     fontFamily: 'HelveticaNeue',
     fontSize: 10,
-    color: '#9e9e9e',
+    color: Colors.gray,
     marginBottom: 4,
     marginRight: 10,
     marginLeft: 10,

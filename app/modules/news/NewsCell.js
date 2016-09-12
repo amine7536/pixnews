@@ -4,6 +4,7 @@ import { StyleSheet, View, Text, Image } from 'react-native';
 import HTMLView from 'react-native-htmlview';
 import _ from 'lodash';
 
+import { Colors, Fonts, Metrics } from '../../theme';
 import PixTouchableIOS from '../../components/PixTouchable';
 
 class NewsCell extends Component {
@@ -21,7 +22,7 @@ class NewsCell extends Component {
     let cell = (
       <View>
         <View style={styles.titleSection}>
-          <Text numberOfLines={2} style={styles.newsTitle}>
+          <Text numberOfLines={2} style={[styles.newsTitle, Fonts.style.title]}>
             {title}
           </Text>
         </View>
@@ -70,13 +71,9 @@ const styles = StyleSheet.create({
   },
   newsTitle: {
     flex: 1,
-    fontSize: 24,
-    fontWeight: 'bold',
-    fontFamily: 'HelveticaNeue-bold',
-    lineHeight: 24,
-    color: '#000000',
-    marginBottom: 4,
-    marginRight: 10,
+    lineHeight: 26,
+    color: Colors.black,
+    marginBottom: Metrics.smallMargin,
   },
   newsImage: {
     height: 210,

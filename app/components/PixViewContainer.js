@@ -1,25 +1,14 @@
 import React from 'react';
-import {
-  StyleSheet,
-  View
-} from 'react-native';
+import { View } from 'react-native';
 
+import { ApplicationStyles } from '../theme';
 
 const PixViewContainer = (props) => {
   return (
-    <View style={[styles.viewContainer, props.style || {}]}>
+    <View style={[ApplicationStyles.mainContainer, props.style || {}]}>
       {props.children}
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  viewContainer: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'stretch',
-  },
-});
 
 export default PixViewContainer;
